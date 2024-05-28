@@ -1,0 +1,54 @@
+const [myEditor,setMyEditor] = useState()
+
+    const wrapperRef = useCallback(()=>{
+        const value = /* set from `myEditor.getModel()`: */ `function hello() {
+            alert('Hello world!');
+        }`;
+        
+        const monacoEditor = document.getElementById("container")
+        
+        const Editor = monaco.editor.create(monacoEditor, {
+            value: 'function hello() {\n\talert("Hello world!");\n}',
+            language: "javascript",
+            theme: 'vs-dark',
+            automaticLayout: true,
+            fontSize: 14,
+            lineNumbers: 'on',
+            scrollBeyondLastLine: false,
+            minimap: {
+                enabled: true,
+                maxColumn: 80
+            },
+            wordWrap: 'on',
+            tabSize: 2,
+            insertSpaces: true,
+            cursorStyle: 'line',
+            cursorBlinking: 'blink',
+            smoothScrolling: true,
+            accessibilitySupport: 'on',
+            ariaLabel: 'Code editor',
+            suggestOnTriggerCharacters: true,
+            quickSuggestions: {
+                other: true,
+                comments: false,
+                strings: true
+            },
+            parameterHints: {
+                enabled: true
+            },
+            hover: {
+                enabled: true
+            },
+            formatOnType: true,
+            formatOnPaste: true,
+            codeActionsOnSave: {
+                source: {
+                    organizeImports: true
+                }
+            },
+            validateOnInput: true,
+            enableSchemaRequest: true
+        });
+
+        setMyEditor(Editor)
+    })

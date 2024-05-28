@@ -1,0 +1,146 @@
+/* .items{
+    height: 30vh;
+    width: 30vw;
+    background-color: aqua;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.title{
+    text-align: center;
+}
+
+.itemscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+
+
+/* home.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.createNew {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.createNewbtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createNewbtn:hover {
+    background-color: #45a049;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+.itemscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.items {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.items:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.itemlink {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+a{
+    text-decoration: none;  
+}
+
+.itemlink:hover {
+    color: #4CAF50;
+}
+
+p {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.btn-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Monaco-btn {
+    background-color: #47c64b;
+    border: solid 1px #333;
+    color: #333;
+    padding: 0.2rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.Monaco-btn:hover {
+    background-color: #333;
+    color:#21eb28;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.Quill-btn {
+    color:  #47c64b;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    border: solid 1px #333;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.Quill-btn:hover {
+    background-color: #47c64b;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}

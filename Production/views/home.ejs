@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <div class="createNew">
+        <form action="/createNew" method="get">
+            <button type="submit" class="createNewbtn">createNew</button>
+        </form>
+    </div>
+
+    <h1 class="title">Open Existing</h1>
+
+    <div class="itemscontainer">
+        <% for(let data of datas) { %>
+        <div class = "items">
+            <h3><%= data.data.fileName %></h3>
+            <!-- <h6>Open With</h6> -->
+            <div class="btn-container">
+                <a href=<%=`/documents/${data._id}/Monaco`%>><div class="Monaco-btn">Monaco</div></a>
+                <a href=<%=`/documents/${data._id}/Quill`%> > <div class="Quill-btn">Quill </div></a>
+            </div>
+            <br><br>
+            <p><%=data._id %></p>
+            <p><a href=<%=`/deleteItem/${data._id}`%>>Delete File</a></p>
+        </div>
+        <% } %> 
+        
+    </div>
+</body>
+</html>

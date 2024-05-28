@@ -1,12 +1,12 @@
 # Quick Start
 
-Enable MongoDB on your Device\n
+Enable MongoDB on your Device
 
-cd Production\n
-npm i\n
-nodemon server.js\n
+cd Production
+npm i
+nodemon server.js
 
-visit localhost:5000\n
+visit localhost:5000
 
-Enjoy!!!!\n
+Enjoy!!!!
 

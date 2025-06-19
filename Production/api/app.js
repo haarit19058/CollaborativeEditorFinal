@@ -94,3 +94,14 @@ app.get("/documents/:id/Quill",(req,res)=>{
 app.listen(5000,()=>{
     console.log("Server is listening")
 })
+
+
+
+
+
+
+// api/app.js
+module.exports = (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.send('Hello from app.js!')
+}

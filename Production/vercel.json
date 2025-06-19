@@ -1,24 +1,14 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["build/","views/"] }
-    }
+    { "src": "api/app.js", "use": "@vercel/node" },
+    { "src": "build/**/*", "use": "@vercel/static" }
   ],
-
-
-
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Authorization,  Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-      }
-    }
+    { "src": "/api/(.*)", "dest": "/api/app.js" },
+    { "src": "/index_quill$", "dest": "/build/index_quill.html" },
+    { "src": "/index_monaco$", "dest": "/build/index_monaco.html" },
+    { "src": "/(.*)", "dest": "/build/index_quill.html" }
   ]
 }

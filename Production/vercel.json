@@ -1,14 +1,10 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
     { "src": "api/app.js", "use": "@vercel/node" },
-    { "src": "build/**/*", "use": "@vercel/static" }
+    { "src": "/", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/app.js" },
-    { "src": "/index_quill$", "dest": "/build/index_quill.html" },
-    { "src": "/index_monaco$", "dest": "/build/index_monaco.html" },
-    { "src": "/(.*)", "dest": "/build/index_quill.html" }
   ]
 }

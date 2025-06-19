@@ -1,146 +1,368 @@
-/* .items{
-    height: 30vh;
-    width: 30vw;
-    background-color: aqua;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-}
+/* ====================================
+   GLOBAL STYLES & RESET
+   ==================================== */
 
-.title{
-    text-align: center;
-}
-
-.itemscontainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
-
-
-/* home.css */
-
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     color: #333;
+    line-height: 1.6;
 }
 
+/* ====================================
+   HEADER & CREATE NEW SECTION
+   ==================================== */
+
+/* Create new document section */
 .createNew {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Create new button styling */
 .createNewbtn {
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #667eea, #764ba2);
     color: white;
     border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .createNewbtn:hover {
-    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #5a6fd8, #6a4190);
 }
+
+.createNewbtn:active {
+    transform: translateY(0);
+}
+
+/* ====================================
+   TITLE SECTION
+   ==================================== */
 
 .title {
     text-align: center;
-    margin: 20px 0;
-    font-size: 2.5em;
-    color: #4CAF50;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 3rem 0 2rem 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* ====================================
+   DOCUMENTS CONTAINER
+   ==================================== */
 
 .itemscontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* ====================================
+   DOCUMENT CARDS
+   ==================================== */
+
 .items {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
 }
 
 .items:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.itemlink {
-    text-decoration: none;
+/* Document title */
+.items h3 {
     color: #333;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-a{
-    text-decoration: none;  
-}
-
-.itemlink:hover {
-    color: #4CAF50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    word-wrap: break-word;
 }
 
-p {
-    color: #888;
-    font-size: 0.9em;
-    margin-top: 10px;
-}
+/* ====================================
+   ACTION BUTTONS
+   ==================================== */
 
-.btn-container{
+.btn-container {
     display: flex;
-    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.Monaco-btn,
+.Quill-btn {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .Monaco-btn {
-    background-color: #47c64b;
-    border: solid 1px #333;
-    color: #333;
-    padding: 0.2rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease,box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, #007acc, #0066cc);
+    box-shadow: 0 2px 10px rgba(0, 122, 204, 0.3);
 }
 
 .Monaco-btn:hover {
-    background-color: #333;
-    color:#21eb28;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, #0066cc, #005299);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.4);
 }
 
 .Quill-btn {
-    color:  #47c64b;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    border: solid 1px #333;
-    background-color: transparent;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
 }
 
 .Quill-btn:hover {
-    background-color: #47c64b;
-    color: #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, #ee5a24, #e55039);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Ensure links don't have default styling */
+.btn-container a {
+    text-decoration: none;
+    flex: 1;
+}
+
+/* ====================================
+   DOCUMENT INFO SECTION
+   ==================================== */
+
+.items p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+}
+
+.items p:first-of-type {
+    font-family: 'Courier New', monospace;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-left: 3px solid #667eea;
+}
+
+/* Delete link styling */
+.items p:last-child a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    background: rgba(231, 76, 60, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.items p:last-child a:hover {
+    background: #e74c3c;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+    
+    .itemscontainer {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .createNewbtn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .Monaco-btn,
+    .Quill-btn {
+        padding: 0.8rem;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .itemscontainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+    
+    .items {
+        padding: 1rem;
+    }
+    
+    .createNew {
+        padding: 1.5rem 0;
+    }
+    
+    .createNewbtn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ====================================
+   EMPTY STATE
+   ==================================== */
+
+.itemscontainer:empty::after {
+    content: "No documents found. Create your first document!";
+    display: block;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-style: italic;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
+/* ====================================
+   ANIMATIONS
+   ==================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.items {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.items:nth-child(2) { animation-delay: 0.1s; }
+.items:nth-child(3) { animation-delay: 0.2s; }
+.items:nth-child(4) { animation-delay: 0.3s; }
+.items:nth-child(5) { animation-delay: 0.4s; }
+.items:nth-child(6) { animation-delay: 0.5s; }
+
+/* ====================================
+   ACCESSIBILITY
+   ==================================== */
+
+/* Focus states for better accessibility */
+.createNewbtn:focus,
+.Monaco-btn:focus,
+.Quill-btn:focus,
+.items p:last-child a:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .items {
+        border: 2px solid #333;
+    }
+    
+    .createNewbtn,
+    .Monaco-btn,
+    .Quill-btn {
+        border: 2px solid white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .items,
+    .createNewbtn,
+    .Monaco-btn,
+    .Quill-btn {
+        transition: none;
+        animation: none;
+    }
 }
